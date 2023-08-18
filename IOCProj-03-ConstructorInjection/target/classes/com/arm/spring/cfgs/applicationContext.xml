@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<bean id="dtd" class="java.util.Date">
+		<property name="year" value="98" />
+		<property name="month" value="06" />
+		<property name="date" value="31" />
+	</bean>
+	<bean id="dt" class="java.util.Date" />
+	<bean id="wmg" class="com.arm.spring.beans.WishMessageGenerator">
+		<constructor-arg name="date" ref="dt" />
+		<property name="date" ref="dtd" />
+		<!-- <constructor-arg name="qoute" value="There is nothing impossible to 
+			they who will try."/> -->
+		<!-- <property name="qoute" value="Champions keep playing until they get 
+			it right."/> -->
+	</bean>
+</beans>
