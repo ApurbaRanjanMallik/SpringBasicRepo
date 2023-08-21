@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<!-- Dependent class bean definition -->
+	<bean id="cng" class="com.arm.spring.comp.CNGEngine" />
+	<bean id="petrol" class="com.arm.spring.comp.PetrolEngine" />
+	<bean id="diesel" class="com.arm.spring.comp.DieselEngine" />
+
+	<!-- Target class bean definition -->
+	<bean id="vehicle" class="com.arm.spring.comp.Vehicle">
+		<property name="engine" ref="diesel" />
+	</bean>
+</beans>
