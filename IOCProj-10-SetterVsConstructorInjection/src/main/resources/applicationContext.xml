@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<bean id="employee" class="com.arm.spring.beans.Employee">
+		<constructor-arg name="empNo" value="18" />
+		<constructor-arg name="name" value="Apurba" />
+		<constructor-arg name="salary" value="1800000" />
+	</bean>
+	<bean id="studnet" class="com.arm.spring.beans.Student">
+		<property name="mark" value="96" />
+		<property name="name" value="Amiya" />
+		<property name="rollNo" value="10" />
+	</bean>
+	<bean id="person" class="com.arm.spring.beans.Person">
+		<constructor-arg name="name" value="Virat" />
+		<constructor-arg name="age" value="34" />
+		<constructor-arg name="address" value="Delhi" />
+		<property name="mobNo" value="9853414398" />
+		<property name="hobbies" value="Playing Cricket"/>
+	</bean>
+
+</beans>
