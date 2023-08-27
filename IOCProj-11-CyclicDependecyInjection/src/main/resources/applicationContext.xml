@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here for CDI using setter -->
+	<bean id="hen" class="com.arm.spring.beans.Hen">
+		<property name="egg" ref="egg" />
+	</bean>
+	<bean id="egg" class="com.arm.spring.beans.Egg">
+		<property name="hen" ref="hen" />
+	</bean>
+
+	<!-- bean definitions here for CDI using constructor -->
+	<bean id="hen1" class="com.arm.spring.beans.Hen1">
+		<constructor-arg name="egg1" ref="egg1" />
+	</bean>
+	<bean id="egg1" class="com.arm.spring.beans.Egg1">
+		<constructor-arg name="hen1" ref="hen1" />
+	</bean>
+
+	<!-- bean definitions here for CDI using both constructor and setter -->
+	<bean id="hen2" class="com.arm.spring.beans.Hen2">
+		<constructor-arg name="egg2" ref="egg2" />
+	</bean>
+	<bean id="egg2" class="com.arm.spring.beans.Egg2">
+		<property name="hen2" ref="hen2" />
+	</bean>
+
+</beans>
