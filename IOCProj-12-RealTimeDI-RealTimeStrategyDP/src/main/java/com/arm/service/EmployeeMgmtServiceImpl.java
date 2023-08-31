@@ -29,8 +29,8 @@ public final class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		// Use DAO and Insert Employee data using BO
 		int count = dao.insertEmployee(bo);
 		// Generate final result
-		return count == 1 ? "Employee registered with net salary" + netSalary
-				: "Employee registered with net salary" + netSalary;
+		return count == 1 ? "Employee registered with net salary :" + netSalary
+				: "Employee registered with net salary :" + netSalary;
 
 	}
 

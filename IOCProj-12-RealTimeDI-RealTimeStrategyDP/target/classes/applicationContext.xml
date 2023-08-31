@@ -5,8 +5,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- bean definitions here -->
-	<!-- DataSource Configuration -->
-	<bean id="drds"
+	<!-- DataSource Configuration for Oracle DB -->
+	<bean id="drdsOracle"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
@@ -16,17 +16,33 @@
 		<property name="password" value="apurba" />
 	</bean>
 
-	<!-- DAO class configuration -->
-	<bean id="empDAO" class="com.arm.dao.EmployeeDAOImpl">
-		<constructor-arg name="ds" ref="drds" />
+	<!-- DataSource Configuration for MySQL DB -->
+	<bean id="drdsMySQL"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/apurbadb" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<!-- DAO class configuration for Oracle DB -->
+	<bean id="empOracleDAO" class="com.arm.dao.EmployeeOracleDAOImpl">
+		<constructor-arg name="ds" ref="drdsOracle" />
+	</bean>
+	<!-- DAO class configuration for MySQL DB -->
+	<bean id="empMySQLDAO" class="com.arm.dao.EmployeeMySQLDAOImpl">
+		<constructor-arg name="ds" ref="drdsMySQL" />
 	</bean>
 
 	<!-- Service class configuration -->
 	<bean id="empService"
 		class="com.arm.service.EmployeeMgmtServiceImpl">
-		<constructor-arg name="dao" ref="empDAO" />
+		<!-- <constructor-arg name="dao" ref="empOracleDAO" /> -->
+		<constructor-arg name="dao" ref="empOracleDAO" />
 	</bean>
-	
+
 	<!-- Controller class configuration -->
 	<bean id="controller" class="com.arm.controller.MainController">
 		<constructor-arg name="service" ref="empService" />

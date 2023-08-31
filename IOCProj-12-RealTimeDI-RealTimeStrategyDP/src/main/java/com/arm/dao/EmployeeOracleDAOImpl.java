@@ -8,13 +8,13 @@ import javax.sql.DataSource;
 
 import com.arm.bo.EmployeeBO;
 
-public final class EmployeeDAOImpl implements IEmployeeDAO {
+public final class EmployeeOracleDAOImpl implements IEmployeeDAO {
 	private static final String EMP_INSERT_QUERY = "INSERT INTO REALTIMEDI_SPRING_EMPLOYEE VALUES(ENO_SEQ.NEXTVAL,?,?,?,?,?)";
 	private DataSource ds;
 
-	public EmployeeDAOImpl(DataSource ds) {
+	public EmployeeOracleDAOImpl(DataSource ds) {
 		super();
-		System.out.println("EmployeeDAOImpl.EmployeeDAOImpl()");
+		System.out.println("EmployeeOracleDAOImpl.EmployeeOracleDAOImpl()");
 		this.ds = ds;
 	}
 
@@ -63,7 +63,7 @@ public final class EmployeeDAOImpl implements IEmployeeDAO {
 
 	@Override
 	public int insertEmployee(EmployeeBO bo) throws Exception {
-		System.out.println("EmployeeDAOImpl.insertEmployee()");
+		System.out.println("EmployeeOracleDAOImpl.insertEmployee()");
 		int result = 0;
 		try (Connection con = ds.getConnection(); PreparedStatement ps = con.prepareStatement(EMP_INSERT_QUERY)) {
 			ps.setString(1, bo.geteName());
