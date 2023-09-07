@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<!-- static factory method returning it's own class object -->
+	<bean id="dateclass" class="java.lang.Class"
+		factory-method="forName">
+		<constructor-arg value="java.util.Date" />
+	</bean>
+	<!-- static factory method returning it's relevant class object -->
+	<bean id="calendar" class="java.util.Calendar"
+		factory-method="getInstance"></bean>
+	<!-- static factory method returning unrelated class object -->
+	<bean id="properties" class="java.lang.System"
+		factory-method="getProperties"></bean>
+	<!-- instance factory method returning it's own class object -->
+	<bean id="s1" class="java.lang.String">
+		<constructor-arg value="Hi Apurba..." />
+	</bean>
+	<bean id="s2" factory-bean="s1" factory-method="concat">
+		<constructor-arg value="How are you doing?" />
+	</bean>
+	<!-- instance factory method returning unrelated class object -->
+	<bean id="sb1" class="java.lang.StringBuffer">
+		<constructor-arg value="Happy Janmastami" />
+	</bean>
+	<bean id="s3" factory-bean="sb1" factory-method="substring">
+		<constructor-arg value="6" />
+		<constructor-arg value="16" />
+	</bean>
+</beans>
