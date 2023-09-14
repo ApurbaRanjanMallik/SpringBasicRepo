@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here singleton scope-->
+	<bean id="employee" class="com.arm.spring.beans.Employee"
+		scope="singleton">
+		<property name="empId" value="18" />
+		<property name="role" value="SDE-1" />
+		<property name="address" ref="address" />
+	</bean>
+	<bean id="address" class="com.arm.spring.beans.Address"
+		scope="singleton">
+		<property name="country" value="Bharat" />
+		<property name="state" value="Odisha" />
+		<property name="pin" value="756135" />
+	</bean>
+	<bean id="emp" class="com.arm.spring.beans.Employee"
+		scope="singleton">
+		<property name="empId" value="7" />
+		<property name="role" value="SDE-2" />
+		<property name="address" ref="addrs" />
+	</bean>
+	<bean id="addrs" class="com.arm.spring.beans.Address"
+		scope="singleton">
+		<property name="country" value="Bharat" />
+		<property name="state" value="Telangana" />
+		<property name="pin" value="500016" />
+	</bean>
+
+	<bean id="mysingletonone" class="com.arm.spring.beans.MySingleton" />
+	<bean id="mysingletontwo" class="com.arm.spring.beans.MySingleton" />
+
+	<bean id="mysingletonthree"
+		class="com.arm.spring.beans.MySingleton"
+		factory-method="getInstanceOfMySingleton" />
+	<bean id="mysingletonfour"
+		class="com.arm.spring.beans.MySingleton"
+		factory-method="getInstanceOfMySingleton" />
+
+
+</beans>

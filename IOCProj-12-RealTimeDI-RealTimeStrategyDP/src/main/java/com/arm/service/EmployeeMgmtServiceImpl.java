@@ -30,7 +30,7 @@ public final class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		int count = dao.insertEmployee(bo);
 		// Generate final result
 		return count == 1 ? "Employee registered with net salary :" + netSalary
-				: "Employee registered with net salary :" + netSalary;
+				: "Employee registered failed having net salary :" + netSalary;
 
 	}
 
