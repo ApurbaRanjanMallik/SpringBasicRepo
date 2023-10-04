@@ -1,6 +1,6 @@
 package com.arm.spring.comp;
 
-public class CNGEngine implements Engine {
+public final class CNGEngine implements Engine {
 
 	@Override
 	public void fillGas(double kg) {

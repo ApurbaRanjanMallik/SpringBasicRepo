@@ -1,6 +1,6 @@
 package com.arm.spring.comp;
 
-public class DieselEngine implements Engine {
+public final class DieselEngine implements Engine {
 
 	@Override
 	public String fillFuel(double litre) {

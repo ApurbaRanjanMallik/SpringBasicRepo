@@ -1,6 +1,6 @@
 package com.arm.spring.comp;
 
-public class Vehicle {
+public final class Vehicle {
 	private Engine engine;
 
 	public void setEngine(Engine engine) {

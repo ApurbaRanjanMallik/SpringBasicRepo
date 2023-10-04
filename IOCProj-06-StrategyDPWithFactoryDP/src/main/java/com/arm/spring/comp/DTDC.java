@@ -1,6 +1,6 @@
 package com.arm.spring.comp;
 
-public class DTDC implements Courier{
+public final class DTDC implements Courier{
 	
 	public DTDC() {
 		System.out.println("DTDC 0-param constructor got executed");

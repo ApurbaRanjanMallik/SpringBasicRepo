@@ -1,6 +1,6 @@
 package com.arm.spring.comp;
 
-public class DHL implements Courier {
+public final class DHL implements Courier {
 	public DHL() {
 		System.out.println("DHL 0-param constructor got executed");
 	}

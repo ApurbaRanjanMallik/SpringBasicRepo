@@ -3,7 +3,7 @@ package com.arm.spring.comp;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FlipKart {
+public final class FlipKart {
 	private Courier courier;
 
 	public FlipKart() {

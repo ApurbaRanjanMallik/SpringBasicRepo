@@ -3,7 +3,7 @@ package com.arm.spring.comp;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FlipKart {
+public final class FlipKart {
 	private Courier courier;
 
 	public FlipKart() {
@@ -28,7 +28,8 @@ public class FlipKart {
 					+ Arrays.toString(prices) + " respectively. The total bill amount generated for your order is : "
 					+ billAmount;
 		}
-		return finalMessage +"\n"+ courier.deliver(orderID)+".\nKeep shopping on FlipKart.\nFlipKart Team.\nThank you : )";
+		return finalMessage + "\n" + courier.deliver(orderID)
+				+ ".\nKeep shopping on FlipKart.\nFlipKart Team.\nThank you : )";
 
 	}
 
