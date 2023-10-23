@@ -40,7 +40,7 @@
 	<bean id="empService"
 		class="com.arm.service.EmployeeMgmtServiceImpl">
 		<!-- <constructor-arg name="dao" ref="empOracleDAO" /> -->
-		<constructor-arg name="dao" ref="empOracleDAO" />
+		<constructor-arg name="dao" ref="empMySQLDAO" />
 	</bean>
 
 	<!-- Controller class configuration -->
